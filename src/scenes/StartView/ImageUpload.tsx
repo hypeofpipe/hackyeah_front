@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
 `;
 const EmojiP = styled.p`
-  font-size: 15vw;
+  font-size: 14vw;
   margin: 0;
 `;
 const StyledButton = styled(Button)`
