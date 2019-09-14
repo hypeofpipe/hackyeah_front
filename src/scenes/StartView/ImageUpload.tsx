@@ -7,12 +7,11 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
 `;
 const EmojiP = styled.p`
-  font-size: 20vw;
-  margin: 0;
-`;
-const P = styled.p`
   font-size: 15vw;
   margin: 0;
+`;
+const StyledButton = styled(Button)`
+  width: 100%;
 `;
 
 export const ImageUpload = () => {
@@ -23,7 +22,7 @@ export const ImageUpload = () => {
   const onChangeHandler = (event: any) => console.log(event.target.files[0]);
   return (
     <Wrapper>
-      <Button onClick={handleClick} variant="dark">
+      <StyledButton onClick={handleClick} variant="dark">
         <input
           type="file"
           name="file"
@@ -32,8 +31,7 @@ export const ImageUpload = () => {
           ref={input}
         />
         <EmojiP>📷</EmojiP>
-        <P>Upload</P>
-      </Button>
+      </StyledButton>
     </Wrapper>
   );
 };
