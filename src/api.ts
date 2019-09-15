@@ -9,3 +9,19 @@ export const getTrashTypes = () =>
       'Access-Control-Allow-Origin': '*',
     },
   });
+
+export const sendSubmission = (data: {
+  location: {
+    latitude: string;
+    longitude: string;
+  };
+
+  image: string;
+  type_of_trash: number;
+}) =>
+  axios.post(`${baseUrl}/trash`, data, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+  });

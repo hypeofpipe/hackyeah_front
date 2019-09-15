@@ -4,7 +4,6 @@ import { FieldRenderProps } from 'react-final-form';
 import { Form, Col } from 'react-bootstrap';
 
 const Wrapper = styled.div`
-  background: gray;
   margin-bottom: 2rem;
 `;
 
@@ -27,9 +26,9 @@ export const Dropdown = ({ elements, input }: Props) => (
     <StyledGroup as={Col}>
       <StyledLabel>Choose type of trash</StyledLabel>
       <StyledControl {...input} as="select">
-        {Object.keys(elements).map((element: any) => (
-          <option>{elements[element]}</option>
-        ))}
+        {Object.keys(elements).map((element: any) => {
+          return <option>{elements[element]}</option>;
+        })}
       </StyledControl>
     </StyledGroup>
   </Wrapper>

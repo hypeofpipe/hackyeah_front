@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 
 const Wrapper = styled.div`
-  background: gray;
   margin-bottom: 2rem;
 `;
 const EmojiP = styled.p`
@@ -13,20 +12,19 @@ const EmojiP = styled.p`
 `;
 const StyledButton = styled(Button)`
   width: 100%;
+  background-color: transparent;
 `;
 
-export const ImageUpload = (
-  props: FieldRenderProps<string, HTMLInputElement>,
-) => {
+export const ImageUpload = () => {
   let input: React.RefObject<HTMLInputElement> = React.createRef();
   const handleClick = (e_: React.MouseEvent<{}>) => {
     input && input.current && input.current.click();
   };
-  let bas;
+
   return (
     <Wrapper>
       <StyledButton onClick={handleClick} variant="dark">
-        <input {...props.input} type="file" hidden ref={input} />
+        <input type="file" hidden ref={input} />
         <EmojiP>📷</EmojiP>
       </StyledButton>
     </Wrapper>

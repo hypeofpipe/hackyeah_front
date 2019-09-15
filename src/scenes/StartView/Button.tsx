@@ -18,6 +18,8 @@ export const Button = ({
   type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }) => (
   <Wrapper>
-    <StyledButton type={type}>{children}</StyledButton>
+    <StyledButton variant="light" type={type}>
+      {children}
+    </StyledButton>
   </Wrapper>
 );
