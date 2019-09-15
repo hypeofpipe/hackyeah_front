@@ -11,9 +11,3 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 export const P = styled.p``;
-export const Button = styled.div`
-  width: 20vw;
-  height: 20vw;
-  background: black;
-  margin-bottom: 2rem;
-`;

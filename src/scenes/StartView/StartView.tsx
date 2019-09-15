@@ -1,7 +1,8 @@
 import React from 'react';
 import { getTrashTypes } from '../../api';
-import { RootWrapper, Wrapper, Button } from './StartView.styled';
+import { RootWrapper, Wrapper } from './StartView.styled';
 import { Geolocation } from './Geolocation';
+import { Button } from './Button';
 import { ImageUpload } from './ImageUpload';
 import { Dropdown } from './Dropdown';
 
@@ -13,7 +14,7 @@ export const StartView = () => (
       <ImageUpload />
       <Geolocation />
       <Dropdown />
-      <Button />
+      <Button>Submit</Button>
     </Wrapper>
   </RootWrapper>
 );
