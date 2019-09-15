@@ -10,8 +10,14 @@ const StyledButton = styled(BButton)`
   width: 100%;
 `;
 
-export const Button = ({ children }: { children?: React.ReactNode }) => (
+export const Button = ({
+  children,
+  type,
+}: {
+  children?: React.ReactNode;
+  type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+}) => (
   <Wrapper>
-    <StyledButton>{children}</StyledButton>
+    <StyledButton type={type}>{children}</StyledButton>
   </Wrapper>
 );

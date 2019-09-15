@@ -1,37 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Dropdown as BDropdown } from 'react-bootstrap';
+import { FieldRenderProps } from 'react-final-form';
+import { Form, Col } from 'react-bootstrap';
 
 const Wrapper = styled.div`
   background: gray;
   margin-bottom: 2rem;
 `;
 
-const StyledDropdown = styled(BDropdown)`
+const StyledGroup = styled(Form.Group)`
   width: 100%;
 `;
-const StyledToggle = styled(BDropdown.Toggle)`
+const StyledLabel = styled(Form.Label)`
   width: 100%;
 `;
-const StyledMenu = styled(BDropdown.Menu)`
-  width: 100%;
-`;
-const StyledItem = styled(BDropdown.Item)`
+const StyledControl = styled(Form.Control)`
   width: 100%;
 `;
 
-export const Dropdown = () => (
+interface Props extends FieldRenderProps<string, HTMLSelectElement> {
+  elements: any;
+}
+
+export const Dropdown = ({ elements, input }: Props) => (
   <Wrapper>
-    <StyledDropdown>
-      <StyledToggle variant="success" id="dropdown-basic">
-        Dropdown Button
-      </StyledToggle>
-
-      <StyledMenu>
-        <StyledItem href="#/action-1">Action</StyledItem>
-        <StyledItem href="#/action-2">Another action</StyledItem>
-        <StyledItem href="#/action-3">Something else</StyledItem>
-      </StyledMenu>
-    </StyledDropdown>
+    <StyledGroup as={Col}>
+      <StyledLabel>Choose type of trash</StyledLabel>
+      <StyledControl {...input} as="select">
+        {Object.keys(elements).map((element: any) => (
+          <option>{elements[element]}</option>
+        ))}
+      </StyledControl>
+    </StyledGroup>
   </Wrapper>
 );

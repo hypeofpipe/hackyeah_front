@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
+import { FieldRenderProps } from 'react-final-form';
 import Form from 'react-bootstrap/Form';
 
 const Wrapper = styled.div`
@@ -11,8 +12,16 @@ const StyledInput = styled(Form.Control)`
   font-size: 3vw;
 `;
 
-export const Geolocation = () => (
+export const Geolocation = (
+  props: FieldRenderProps<string, HTMLInputElement> &
+    React.InputHTMLAttributes<HTMLInputElement>,
+) => (
   <Wrapper>
-    <StyledInput type="text" placeholder="Provide your geolocation..." />
+    <StyledInput
+      {...props.input}
+      {...props}
+      type="text"
+      placeholder="Provide your geolocation..."
+    />
   </Wrapper>
 );
